@@ -1,7 +1,4 @@
 
-import java.util.Arrays;
-
-//Blatt 1
 //Aufgabe 1:
 //Use 2. Ansatz
 
@@ -99,44 +96,56 @@ class MedianArray{
 }
 
 //Aufgabe 2
-class QuickSort{
-    //attributes
-    int a []; //array
-    int n; //length
+// class QuickSort extends Sequence{
+//     //attributes
+//     int a []; //array
+//     int n; //length
 
-    //constructor
-    public QuickSort(int[] arr){
-        this.a = arr;
-        this.n = arr.length;
-    }
+//     //constructor
+//     public QuickSort (int size)   {
+//         // this.a = arr;
+//         // this.n = arr.length;
+//         super(size);
+//     }
 
-    private void swap(int[] a, int i, int j) {
-        int tmp = a[i];
-        a[i] = a[j];
-        a[j] = tmp;
-    }
+//     public QuickSort (String fName)   {
+//         // this.a = arr;
+//         // this.n = arr.length;
+//         super(fName);
+//     }
 
-    //aus der Vorlesung
-    public void sort(int start, int end) {
-        int no_elem = (end - start) + 1;
-        if (no_elem <= 1) return;
-        /* Wichtig: Pivot-Element merken */
-        int pivot = a[start + (no_elem / 2)];
-        int low = start; int high = end;
-        do {
-            while (a[low] < pivot) low++;
-            while (a[high] > pivot) high--;
-            if (low <= high) {
-                this.swap (a,low, high);
-                low++; high--;
-            }
+//     private void swap(int[] a, int i, int j) {
+//         int tmp = a[i];
+//         a[i] = a[j];
+//         a[j] = tmp;
+//     }
+
+//     //aus der Vorlesung
+//     public void sort(int start, int end) {
+//         int no_elem = (end - start) + 1;
+//         if (no_elem <= 1) return;
+//         /* Wichtig: Pivot-Element merken */
+//         int pivot = a[start + (no_elem / 2)];
+//         int low = start; int high = end;
+//         do {
+//             while (a[low] < pivot) low++;
+//             while (a[high] > pivot) high--;
+//             if (low <= high) {
+//                 this.swap (a,low, high);
+//                 low++; high--;
+//             }
              
-        }while (high >= low);
-        this.sort(start, high);
-        this.sort(low, end);
-    }
+//         }while (high >= low);
+//         this.sort(start, high);
+//         this.sort(low, end);
+//     }
 
-}
+//     public static void run_test(String fName){
+//         QuickSort qs = new QuickSort(fName);
+//         qs.run_sort(fName);
+//     }
+
+// }
 
 
 //Aufgabe 3
@@ -144,16 +153,23 @@ class QuickSort{
 public class main {
     public static void main(String[] args) {
         //int[] data = {7, 2, 5, 3, 1};
-        int [] data = {7, 2, 5, 3, 1,4,12,11,15};
-        int n = data.length;
+        // int [] data = {7, 2, 5, 3, 1,4,12,11,15};
+        // int n = data.length;
         // MedianArray arr = new MedianArray(data);
 
         // int k = data.length / 2;
         // int med_index = arr.find_kth(data, k); // +1 si estás usando 1-based indexing
         // System.out.println("Median: " + data[med_index]);
 
-        QuickSort q_array = new QuickSort(data);
-        q_array.sort(0,n-1);
-        System.out.println("Median: " + Arrays.toString(data));
+        // QuickSort q_array = new QuickSort(data);
+        // q_array.sort(0,n-1);
+        // System.out.println("Median: " + Arrays.toString(data));
+
+        //Call_Wrapper.run_selection_sort();
+        //Call_Wrapper.run_quick_sort();
+
+        
+
+
     }
 }
